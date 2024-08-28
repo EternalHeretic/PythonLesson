@@ -1,0 +1,6 @@
+my_string = input('Введите строку ')
+print('Количество символов в строке',len(my_string))
+print('Строка в нижнем регистре', my_string.lower())
+print('Строка в верхнем регистре', my_string.upper())
+print('Первый символ в строке',my_string[0])
+print('Последний символ в строке',my_string[(len(my_string)-1)])
