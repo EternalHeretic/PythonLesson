@@ -3,8 +3,11 @@ i = 0
 len_list = len(my_list)
 print('Список четных положительных чисел:')
 while i != len_list:
-    if (my_list[i] % 2 == 0) and my_list[i] > 0:
+    if my_list[i] > 0:
         print(my_list[i])
         i = i+1
     else:
-        i = i + 1
+        if my_list[i] == 0:
+            i = i + 1
+            continue
+        break
