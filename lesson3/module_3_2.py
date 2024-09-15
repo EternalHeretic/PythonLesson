@@ -1,4 +1,3 @@
-
 def send_email(message:str, recipient:str, * , sender = "university.help@gmail.com"):
     pattern = '@'
     pattern_domen_com   = '.com'
@@ -24,7 +23,6 @@ def send_email(message:str, recipient:str, * , sender = "university.help@gmail.c
 
     else:
         print(f"НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {sender} на адрес {recipient}.")
-
 
 send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
 send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.ru', sender = 'urban.info@gmail.ru')
