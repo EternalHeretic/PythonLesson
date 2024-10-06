@@ -16,3 +16,6 @@ print(get_multiplied_digits(240))
 print(get_multiplied_digits(23000))
 print(get_multiplied_digits(42110))
 print(get_multiplied_digits(98001))
+print(get_multiplied_digits(450001))
+print(get_multiplied_digits(451))
+
