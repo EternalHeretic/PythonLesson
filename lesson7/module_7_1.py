@@ -18,16 +18,14 @@ import os
 
 class Product:
     def __init__(self, name, weight, category):
-        self.name = str(name)
-        self.weight = float(weight)
-        self.category = str(category)
+        self.name = name
+        self.weight = weight
+        self.category = category
 
     def __str__(self):
-        str_product = f'{self.name}, {self.weight}, {self.category}'
-        return  str_product
+        return f'{self.name}, {self.weight}, {self.category}'
 
-class Shop: # tuple
-
+class Shop:
     def __init__(self):
         self.__file_name = 'products.txt'
         if not os.path.exists(self.__file_name):
@@ -35,20 +33,20 @@ class Shop: # tuple
                 pass
 
     def get_products(self):
-        file = open(self.__file_name, 'r+')
-        prod_str = file.read()
+        file = open(self.__file_name, 'r')
+        products = file.read()
         file.close()
-        return prod_str
+        return products
 
     def add(self, *products):
-        file_get = self.get_products()
-        for i in products:
-            if self.get_products().find(f'{i.name},') == -1:
-                file = open(self.__file_name, 'a')
-                file.write(f'{i}\n')
-                file.close()
+        for product in products:
+            _products = self.get_products()
+            if product.name in _products:
+                print(f'Продукт "{product.name}" уже есть в магазине. ')
             else:
-                print(f'Продукт {i.name} уже есть в магазине')
+                _file = open(self.__file_name, 'a')
+                _file.write(f'{product}\n')
+                _file.close()
 
 s1 = Shop()
 p1 = Product('Potato', 50.5, 'Vegetables')
