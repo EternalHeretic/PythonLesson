@@ -13,7 +13,6 @@
 # Метод add(self, *products), который принимает неограниченное количество объектов класса Product.
 # Добавляет в файл __file_name каждый продукт из products, если его ещё нет в файле (по названию).
 # Если такой продукт уже есть, то не добавляет и выводит строку 'Продукт <название> уже есть в магазине'.
-
 import os
 
 class Product:
@@ -39,22 +38,18 @@ class Shop:
         return products
 
     def add(self, *products):
+        _products = {line.split(', ')[0] for line in self.get_products().strip().split('\n') if line}
         for product in products:
-            _products = self.get_products()
             if product.name in _products:
-                print(f'Продукт "{product.name}" уже есть в магазине. ')
+                print(f'Продукт "{product.name}" уже есть в магазине.')
             else:
-                _file = open(self.__file_name, 'a')
-                _file.write(f'{product}\n')
-                _file.close()
+                with open(self.__file_name, 'a') as _file:
+                    _file.write(f'{product}\n')
 
 s1 = Shop()
 p1 = Product('Potato', 50.5, 'Vegetables')
 p2 = Product('Spaghetti', 3.4, 'Groceries')
 p3 = Product('Potato', 5.5, 'Vegetables')
-
 print(p2) # __str__
-
 s1.add(p1, p2, p3)
-
 print(s1.get_products())
