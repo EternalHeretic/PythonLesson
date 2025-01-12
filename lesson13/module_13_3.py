@@ -3,25 +3,22 @@ from aiogram.filters.command import Command
 from aiogram.fsm.storage.memory import MemoryStorage
 import asyncio
 
-API_TOKEN = "7922839201:AAHCwwd1ouZDVkvtI2gQA0MpR9zOpNy2bHg"
+API_TOKEN = "Api"
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
 
 @dp.message(Command(commands=['start']))
 async def start(message: types.Message):
-    await message.answer("Привет! Я бот, помогающий твоему здоровью.")  # Ответ пользователю
-    print("Привет! Я бот, помогающий твоему здоровью.")
+    await message.answer("Привет! Я бот, помогающий твоему здоровью!")
 
 @dp.message(Command(commands=['menu']))
 async def start(message: types.Message):
-    await message.answer("Я меню которое ты не увидишь!")  # Ответ пользователю
-    print("Я меню которое ты не увидишь!")
+    await message.answer("Я меню которое ты не увидишь!")
 
 @dp.message()
 async def all_messages(message: types.Message):
-    await message.answer("Введите команду /start, чтобы начать общение.")  # Ответ пользователю
-    print('Введите команду /start, чтобы начать общение.')
+    await message.answer("Введите команду /start, чтобы начать общение.")
 
 async def main():
     try:
