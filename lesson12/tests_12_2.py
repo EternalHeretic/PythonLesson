@@ -46,7 +46,6 @@
 import runner_and_tournament as rt
 import unittest
 
-
 class TournamentTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
