@@ -29,7 +29,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.client.bot import DefaultBotProperties
 
 # Укажите ваш токен
-API_TOKEN = 'API'
+API_TOKEN = '7922839201:AAHCwwd1ouZDVkvtI2gQA0MpR9zOpNy2bHg'
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
