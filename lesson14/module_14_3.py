@@ -34,7 +34,7 @@ from aiogram.fsm.state import StatesGroup, State
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.client.bot import DefaultBotProperties
 
-API_TOKEN = '7922839201:AAHCwwd1ouZDVkvtI2gQA0MpR9zOpNy2bHg'
+API_TOKEN = 'API'
 
 logging.basicConfig(level=logging.INFO)
 
